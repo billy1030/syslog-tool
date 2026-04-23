@@ -20,6 +20,16 @@ import (
 //go:embed assets
 var assetsFS embed.FS
 
+func serveIndex(w http.ResponseWriter, r *http.Request) {
+	data, err := assetsFS.ReadFile("assets/index.html")
+	if err != nil {
+		http.Error(w, "Not Found", http.StatusNotFound)
+		return
+	}
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Write(data)
+}
+
 // LogEntry represents a single syslog message
 type LogEntry struct {
 	Timestamp  time.Time `json:"timestamp"`
@@ -232,7 +242,15 @@ func main() {
 	mux.HandleFunc("/save", handleSaveUI)
 	mux.HandleFunc("/api/send", handleSend)
 	mux.HandleFunc("/api/info", handleAPIInfo)
-	mux.Handle("/", http.FileServer(http.FS(assetsFS)))
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		data, err := assetsFS.ReadFile("assets/index.html")
+		if err != nil {
+			http.Error(w, "Not Found", http.StatusNotFound)
+			return
+		}
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		w.Write(data)
+	})
 
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
