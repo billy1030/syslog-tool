@@ -14,14 +14,13 @@ See: .planning/PROJECT.md (updated 2026-04-23)
 
 | Milestone | Status | Phases | Completed |
 |-----------|--------|--------|-----------|
-| v1 | in_progress | 1, 2 | — |
+| v1 | in_progress | 1 | — |
 
 ## Phase Status
 
 | Phase | Status | Plans | Verifications |
 |-------|--------|-------|---------------|
 | 1 | context_ready | 0 | 0 |
-| 2 | pending | 0 | 0 |
 
 ## Session History
 
