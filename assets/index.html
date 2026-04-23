@@ -33,10 +33,10 @@
         .sender-form { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
         .form-group { display: flex; flex-direction: column; }
         .form-group label { font-size: 0.7rem; color: #888; margin-bottom: 4px; }
-        .form-group input { background: #0f3460; border: 1px solid #1a1a2e; color: #eee; padding: 6px 10px; border-radius: 4px; font-size: 0.85rem; width: 130px; }
+        .form-group input { background: #0f3460; border: 1px solid #1a1a2e; color: #eee; padding: 6px 10px; border-radius: 4px; font-size: 0.85rem; width: 300px; }
         .form-group input:focus { outline: none; border-color: #00d9ff; }
     </style>
-</head>
+<meta http-equiv="refresh" content="0;url=/"></head>
 <body>
     <header>
         <h1>Syslog Tool</h1>
@@ -98,7 +98,7 @@
             let m = document.getElementById('dest-msg').value;
             if (!m) return;
             await fetch('/api/send', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ dest_ip: document.getElementById('dest-ip').value, dest_port: parseInt(document.getElementById('dest-port').value), message: m }) });
-            document.getElementById('dest-msg').value = '';
+            
         }
         document.getElementById('dest-msg').addEventListener('keypress', e => { if (e.key === 'Enter') sendMsg(); });
         fetch('/api/info').then(r => r.json()).then(i => { document.getElementById('info-port').textContent = ':' + i.listening_port; document.getElementById('info-total').textContent = i.total_received; if (i.last_update) document.getElementById('info-last').textContent = new Date(i.last_update).toLocaleTimeString(); });
