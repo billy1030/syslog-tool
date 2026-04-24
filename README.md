@@ -20,6 +20,7 @@ Download the pre-built binary for your platform:
 
 - `-port`       UDP port to listen for syslog (default: 514)
 - `-web-port`   HTTP port for web UI (default: 18080)
+- `-log-file`   Auto-save logs to file (default: disabled)
 - `-H`          Show help
 
 ### Examples
@@ -28,6 +29,7 @@ Download the pre-built binary for your platform:
 ./syslog-tool.exe                  # defaults: UDP 514, web :18080
 ./syslog-tool.exe -port 514         # custom UDP port
 ./syslog-tool.exe -web-port 18080   # custom web port
+./syslog-tool.exe -log-file=mylogs.txt  # auto-save logs to file
 ./syslog-tool.exe -H                # show help
 ```
 
