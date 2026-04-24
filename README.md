@@ -27,7 +27,7 @@ Download the pre-built binary for your platform:
 ```bash
 ./syslog-tool.exe                  # defaults: UDP 514, web :18080
 ./syslog-tool.exe -port 514         # custom UDP port
-./syslog-tool.exe -web-port 8080    # custom web port
+./syslog-tool.exe -web-port 18080   # custom web port
 ./syslog-tool.exe -H                # show help
 ```
 
