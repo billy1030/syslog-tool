@@ -1,0 +1,19 @@
+# Source code — use compiled binaries
+*.go
+*.html
+*.css
+*.js
+
+# Go
+go.mod
+go.sum
+
+# Planning
+.planning/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
