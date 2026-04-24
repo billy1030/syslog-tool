@@ -54,7 +54,7 @@ Open `http://localhost:18080` in your browser.
 
 - UDP syslog receiver (RFC 3164)
 - Real-time WebSocket push to browser
-- Circular buffer (last 20 entries)
+- Circular buffer (last 65535 entries)
 - Send syslog messages from UI
 - Auto-save logs to file
 - Grey `<34>` priority delimiter display
