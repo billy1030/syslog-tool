@@ -4,6 +4,9 @@
 *.css
 *.js
 
+# Assets directory
+assets/
+
 # Go
 go.mod
 go.sum
@@ -18,5 +21,6 @@ Thumbs.db
 # Logs
 *.log
 
-# Claude
-CLAUDE.md
+# All markdown except README
+*.md
+!README.md
