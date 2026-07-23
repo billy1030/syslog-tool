@@ -2,6 +2,8 @@
 
 A lightweight UDP syslog receiver with a real-time web interface.
 
+![Screenshot](image/Screenshot.png)
+
 ## Download
 
 Download the pre-built binary for your platform:
